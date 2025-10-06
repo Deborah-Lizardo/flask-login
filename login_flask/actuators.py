@@ -1,23 +1,25 @@
 from flask import Blueprint, render_template, request
 from flask_login import login_required
 
+# Blueprint for actuator-related routes
 actuators_bp = Blueprint('actuators', __name__, template_folder="templates")
 
-actuators = {'lamp':1, 'serv motor':122}
+# In-memory actuators dictionary (example data)
+actuators = {'lamp': 1, 'serv motor': 122}
 
-#"home" dos actuators
+# List all actuators (GET)
 @actuators_bp.route('/actuators')
 @login_required
 def list_actuators():
     return render_template("actuators.html", actuators=actuators)
 
-#create
-#chamada = register e metodo add
+# Form to register a new actuator (GET)
 @actuators_bp.route('/register_actuator')
 @login_required
 def register_actuator():
     return render_template("register_actuators.html")
 
+# Register actuator (POST) or show form again (GET)
 @actuators_bp.route('/add_actuator', methods=['GET', 'POST'])
 @login_required
 def add_actuator():
@@ -30,19 +32,19 @@ def add_actuator():
     else:
         return render_template("register_actuators.html")
 
-
-#read
+# Another route to list actuators (optional/redundant)
 @actuators_bp.route('/list_actuators')
 @login_required
 def actuator():
     return render_template("actuators.html", actuators=actuators)
 
-#delete igual aos sensores
+# Show form to delete an actuator (GET)
 @actuators_bp.route('/del_actuator')
 @login_required
 def del_actuator():
     return render_template("remove_actuator.html", actuators=actuators)
 
+# Remove actuator from dictionary (POST)
 @actuators_bp.route('/remove_actuator', methods=['POST'])
 @login_required
 def remove_actuator():

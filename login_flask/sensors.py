@@ -1,23 +1,25 @@
 from flask import Blueprint, render_template, request
 from flask_login import login_required
 
+# Blueprint for sensor-related routes
 sensors_bp = Blueprint('sensors', __name__, template_folder="templates")
 
-sensors = {'temperature':23, 'humidity':22, 'luminosity':10}
+# In-memory sensor dictionary (example data)
+sensors = {'temperature': 23, 'humidity': 22, 'luminosity': 10}
 
-#"home" do sensor
+# List all sensors (GET)
 @sensors_bp.route('/sensors')
 @login_required
 def list_sensors():
     return render_template("sensors.html", sensors=sensors)
 
-#create
-#chamada de tela add e metodo register
+# Form to register a new sensor (GET)
 @sensors_bp.route('/add_sensor', methods=['GET'])
 @login_required
 def add_sensor():
-        return render_template("register_sensor.html")
+    return render_template("register_sensor.html")
 
+# Register sensor (POST) or show form again (GET)
 @sensors_bp.route('/register_sensor', methods=['GET', 'POST'])
 def register_sensor():
     global sensors
@@ -29,13 +31,12 @@ def register_sensor():
     else:
         return render_template("register_sensor.html")
 
-#delete
-#chamada de tela 
+# Show form to delete a sensor (GET)
 @sensors_bp.route('/del_sensor')
 def del_sensor():
     return render_template("remove_sensor.html", sensors=sensors)
-#post-delete
 
+# Remove sensor from dictionary (POST)
 @sensors_bp.route('/remove_sensor', methods=['POST'])
 @login_required
 def remove_sensor():
@@ -43,8 +44,3 @@ def remove_sensor():
     if sensor_to_remove in sensors:
         sensors.pop(sensor_to_remove)
     return render_template("sensors.html", sensors=sensors)
-
-
-
-
-

@@ -7,13 +7,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 </head>
 <body>
-
     <h2>Mein Haus</h2>
-
     <form action="{{ url_for('login.logout') }}" method="GET" style="display:inline;">
         <button type="submit">Logout</button>
     </form>
-
     <div class="container">
         <nav class="menu">
             <ul>
@@ -21,21 +18,16 @@
                 <li><a href="{{ url_for('login.list_users') }}" class="menu-item">See Users</a></li>
                 <li><a href="{{ url_for('sensors.list_sensors') }}" class="menu-item">See Sensors</a></li>
                 <li><a href="{{ url_for('actuators.list_actuators') }}" class="menu-item">See Actuators</a></li>
-
-
             </ul>
         </nav>
-
         <main class="content">
             {% block content %}
             <!-- Conteúdo da página -->
             {% endblock %}
         </main>
     </div>
-
     <footer>
         <p>&copy; 2025 Mein Haus - Hausautomatisierungssystem | Alle Rechte vorbehalten.</p>
     </footer>
-
 </body>
 </html>
