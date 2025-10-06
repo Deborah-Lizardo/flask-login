@@ -1,0 +1,40 @@
+# created by virtualenv automatically
+../.venv/Lib
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Flask / Python environment
+instance/
+.env
+*.env
+venv/
+ENV/
+env/
+.venv/
+
+# IDEs / editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Database files
+*.sqlite3
+*.db
+
+# Pytest / Coverage
+htmlcov/
+.tox/
+.coverage
+.pytest_cache/
+
+# Migrations (opcional, se você quiser versionar migrações, remova essa li
