@@ -1,0 +1,11 @@
+{%extends"base.html" %}
+{% block content%}
+  <h1>Actuators</h1>
+    <ul>
+      {% for key, value in actuators.items() %}
+      <li>{{ key }} : {{ value }}</li>
+      {% endfor%}
+    </ul>
+    <a href="{{ url_for('actuators.add_actuator') }}">Register New Actuator</a>
+    <p><a href="{{ url_for('home') }}">Back to Home</a></p>
+{%endblock%}

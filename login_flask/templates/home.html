@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{%extends"base.html"%}
+{%block content%}
+<ul class="menu">
+    <li><a href="{{ url_for('login.add_user') }}" class="menu-item">Register Users</a></li>
+    <li><a href="{{ url_for('sensors.add_sensor') }}"class="menu-item">Register Sensors</a></li>
+    <li><a href="{{ url_for('actuators.register_actuator')}} " class="menu-item">Register Actuators</a></li>
+
+    <li class="menu-divider"></li>
+
+    <li><a href="{{ url_for('login.list_users') }}" class="menu-item">List Users</a></li>
+    <li><a href="{{ url_for('sensors.list_sensors') }}"  class="menu-item">List Sensors</a></li>
+    <li><a href="{{ url_for('actuators.list_actuators')}}" class="menu-item">List Actuators</a></li>
+
+    <li class="menu-divider"></li>
+
+    <li><a href="{{ url_for('login.remove_user') }}" class="menu-item">Remove User</a></li>
+    <li><a href="{{ url_for('sensors.del_sensor') }}"class="menu-item">Remove Sensor</a></li>
+    <li><a href="{{ url_for('actuators.del_actuator')}}" class="menu-item">Remove Actuator</a></li>
+</ul>
+{%endblock%}
+</html>

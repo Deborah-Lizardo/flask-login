@@ -1,0 +1,50 @@
+/* Estilos globais para body (não centraliza nada) */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container principal da página */
+.container {
+    display: flex; /* deixa menu e conteúdo lado a lado */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Menu lateral */
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 20px 0 0;
+    background-color: #f4f4f4;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Itens do menu */
+.menu-item {
+    display: block;
+    padding: 15px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-item:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Conteúdo da página (lado direito do menu) */
+.content {
+    flex: 1; /* ocupa o espaço restante */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}

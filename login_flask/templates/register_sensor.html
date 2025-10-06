@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "base.html" %}
+{% block content %}
+  <h1>Register Sensor</h1>
+  <form action="{{ url_for('sensors.register_sensor') }}" method="post">
+      <p>Sensor Name:</p>
+      <p><input type="text" name="sensor" placeholder="Sensor Name" required /></p>
+      <p>Initial Value:</p>
+      <p><input type="number" name="value" placeholder="Value" required /></p>
+      <p><input type="submit" value="Register Sensor" /></p>
+  </form>
+{% endblock %}
+</html>

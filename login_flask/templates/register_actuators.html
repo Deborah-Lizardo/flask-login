@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Add Actuator</h1>
+    <form action="{{ url_for('actuators.add_actuator') }}" method="post">
+        <p>Actuator Name:</p>
+        <p><input type="text" name="actuator" placeholder="Actuator Name" required /></p>
+        <p>Initial Value:</p>
+        <p><input type="number" name="value" placeholder="Value" required /></p>
+        <p><input type="submit" value="Register Actuator" /></p>
+    </form>
+{% endblock %}
+

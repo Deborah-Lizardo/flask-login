@@ -1,0 +1,14 @@
+
+{% extends "base.html"%}
+{% block content%}
+    <h1>Sensors</h1>
+    <ul>
+        {% for key, value in sensors.items() %}
+      <li>{{ key }} : {{ value }}</li>
+        {%endfor%}
+    </ul>
+    <a href="{{ url_for('sensors.add_sensor') }}">Register New Sensor</a>
+    <p><a href="{{ url_for('home') }}">Back to Home</a></p>
+{%endblock%}
+
+

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Remove User</h1>
+  <form action="{{ url_for('login.del_user') }}" method="post">
+    <select name="user" class="Input">
+      {% for key in users.keys() %}
+        <option value="{{ key }}">{{ key }}</option>
+      {% endfor %}
+    </select>
+    <p><input type="submit" value="Remove" /></p>
+  </form>
+{% endblock %}
+

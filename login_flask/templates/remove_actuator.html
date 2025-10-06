@@ -1,0 +1,14 @@
+<html>
+{% extends "base.html" %}
+{% block content %}
+  <h1>Remove Actuator</h1>
+  <form action="{{ url_for('actuators.remove_actuator') }}" method="post">
+    <select name="actuator" class="Input">
+      {%for key, value in actuators.items()%}
+        <option>{{ key }}</option>
+      {%endfor%}
+    </select>
+    <p><input type="submit" value="Delete" /></p>
+  </form>
+{% endblock %}
+</html>
