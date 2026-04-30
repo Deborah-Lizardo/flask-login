@@ -12,9 +12,3 @@ O foco principal está na lógica de autenticação, criação e exclusão de us
 - Listagem, criação e remoção de atuadores
 - Controle de acesso usando `@login_required` em rotas protegidas
 - Separação das funcionalidades em Blueprints (login, sensores, atuadores)
-
-### 📺 Vídeo 
-
-Entregável:
-
-🔗 [link do vídeo](https://youtu.be/MAUGGvuydv0)
